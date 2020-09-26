@@ -18,7 +18,7 @@ class PcController extends BaseController
     {
         $pcs = Pc::all();
     
-        return $this->sendResponse(PcResource::collection($pcs), 'Pcs retrieved successfully.');
+        return $this->sendResponse(PcResource::collection($pcs), 'PCs retrieved successfully.');
     }
 
     /**
@@ -42,7 +42,7 @@ class PcController extends BaseController
    
         $pc = Pc::create($input);
    
-        return $this->sendResponse(new PcResource($pc), 'Pc created successfully.');
+        return $this->sendResponse(new PcResource($pc), 'PC created successfully.');
     }
 
     /**
@@ -67,7 +67,7 @@ class PcController extends BaseController
    
         $pc = Pc::create($input);
    
-        return $this->sendResponse(new PcResource($pc), 'Pc created successfully.');
+        return $this->sendResponse(new PcResource($pc), 'PC created successfully.');
     }
 
     /**
@@ -80,10 +80,10 @@ class PcController extends BaseController
     {          
         $pc = Pc::find($id);
         if (is_null($pc)) {
-            return $this->sendError('Pc not found.');
+            return $this->sendError('PC not found.');
         }
    
-        return $this->sendResponse(new PcResource($pc), 'pP retrieved successfully.');
+        return $this->sendResponse(new PcResource($pc), 'PC retrieved successfully.');
     }
 
     /**
@@ -124,7 +124,7 @@ class PcController extends BaseController
         $pc->costo = $input['costo'];
         $pc->save();
    
-        return $this->sendResponse(new PcResource($pc), 'Pc updated successfully.');
+        return $this->sendResponse(new PcResource($pc), 'PC updated successfully.');
     }
 
     /**
@@ -137,10 +137,10 @@ class PcController extends BaseController
     {
         $pc = Pc::find($id);
         if (is_null($pc)) {
-            return $this->sendError('Pc not found.');
+            return $this->sendError('PC not found.');
         }
         $pc->delete();
    
-        return $this->sendResponse([], 'Pc deleted successfully.');
+        return $this->sendResponse([], 'PC deleted successfully.');
     }
 }
