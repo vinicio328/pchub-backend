@@ -20,5 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::resource('pcs','PcController');
+Route::get('pcs/{pc}/components','PcController@components');
 Route::resource('components','ComponentController');
-
+Route::resource('pcs.combos','ComponentPCController');

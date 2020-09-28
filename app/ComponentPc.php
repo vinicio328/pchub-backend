@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ComponentPc extends Model
 {
 	protected $fillable = ['pc_id', 'component_id'];
-	protected $table = 'elemento_menu';	
+	protected $table = 'component_pc';	
 
 	public function pc() 
 	{

@@ -10,6 +10,6 @@ class Pc extends Model
 
     public function components()
 	{
-		return $this->belongsToMany(Component::class, 'component_pc');
+		return $this->belongsToMany(Component::class, 'component_pc', 'pc_id');
 	}
 }

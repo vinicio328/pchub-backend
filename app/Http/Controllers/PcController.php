@@ -6,6 +6,7 @@ use App\Pc;
 use Illuminate\Http\Request;
 use Validator;
 use App\Http\Resources\Pc as PcResource;
+use App\Http\Resources\Component as ComponentResource;
 
 class PcController extends BaseController
 {
@@ -84,6 +85,16 @@ class PcController extends BaseController
 		}
    
 		return $this->sendResponse(new PcResource($pc), 'PC retrieved successfully.');
+	}
+
+	public function components($id)
+	{          
+		$pc = Pc::find($id);
+		if (is_null($pc)) {
+			return $this->sendError('PC not found.');
+		}
+   
+		return $this->sendResponse(new ComponentResource($pc->components), 'PC updated successfully.');
 	}
 
 	/**
