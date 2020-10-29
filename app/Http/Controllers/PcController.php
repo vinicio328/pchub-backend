@@ -152,6 +152,6 @@ class PcController extends BaseController
 		}
 		$pc->delete();
    
-		return $this->sendResponse([], 'PC deleted successfully.');
+		return $this->sendResponse([], 'PC deleted successfully.', 204);
 	}
 }
