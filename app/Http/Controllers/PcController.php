@@ -68,7 +68,7 @@ class PcController extends BaseController
    
 		$pc = Pc::create($input);
    
-		return $this->sendResponse(new PcResource($pc), 'PC created successfully.');
+		return $this->sendResponse(new PcResource($pc), 'PC created successfully.', 201);
 	}
 
 	/**
