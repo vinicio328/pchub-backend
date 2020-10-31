@@ -128,12 +128,7 @@ class PcController extends BaseController
    
 		if($validator->fails()){
 			return $this->sendError('Validation Error.', $validator->errors());       
-		}
-   
-		$pc->nombre = $input['nombre'];
-		$pc->descripcion = $input['descripcion'];
-		$pc->costo = $input['costo'];
-		$pc->save();
+		}   
    
 		return $this->sendResponse(new PcResource($pc), 'PC updated successfully.');
 	}
